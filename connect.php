@@ -1,5 +1,5 @@
 <?php
-// Commentez et decommentez les define en fonction de la config 
+// Commentez et decommentez les define en fonction de la config  cmd(ctrl) k+c
 
 // --- KARIMA ET VALENTIN
 define("BASE","ABI");

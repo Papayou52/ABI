@@ -1,5 +1,5 @@
 <?php
-$titre = "Connexion";
+$title = "Connexion";
 ob_start();
 ?>
 <form class="mt-3" >
@@ -25,5 +25,5 @@ ob_start();
     </div>
 </form>
 <?php
-    $contenu = ob_get_clean();
+    $content = ob_get_clean();
     include "baselayout.php";

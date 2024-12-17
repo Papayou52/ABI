@@ -1,5 +1,5 @@
 <?php
-$titre = "Liste des clients";
+$title = "Liste des clients";
 ob_start();
 ?>
 <h1>Liste des clients</h1>
@@ -33,6 +33,6 @@ ob_start();
     </table>
   
 <?php
-$contenu = ob_get_clean();
+$content = ob_get_clean();
 include "vue/baselayout.php";
 ?>
