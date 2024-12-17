@@ -1,3 +1,63 @@
+
+/* Appliquer une police par défaut */
+h2{
+    align-content: center
+    ;
+}
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f4f4f4;
+}
+
+.actions a {
+    text-decoration: none;
+    margin-right: 8px;
+}
+
+.actions .btn-supprimer {
+    color: red;
+    font-weight: bold;
+}
+
+.actions .btn-supprimer:hover {
+    text-decoration: underline;
+    color: darkred;
+}
+
+.add-container {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.btn-add {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.btn-add:hover {
+    background-color: #218838;
+}
+=======
 h1 {
     text-align: center;
 }
@@ -76,3 +136,4 @@ td {
     width: 600px;
     margin: auto;
 }
+
