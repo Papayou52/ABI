@@ -1,6 +1,7 @@
 <?php
 $title = "";
 ob_start();
+//session_start();
 ?>
 <br><br>
 <h2>Liste des Projets ABI</h2>

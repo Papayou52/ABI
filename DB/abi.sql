@@ -144,13 +144,13 @@ CREATE TABLE IF NOT EXISTS `roles` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `secteurs_activité`
+-- Structure de la table `secteursActivité`
 --
 
-DROP TABLE IF EXISTS `secteurs_activité`;
-CREATE TABLE IF NOT EXISTS `secteurs_activité` (
+DROP TABLE IF EXISTS `secteursActivite`;
+CREATE TABLE IF NOT EXISTS `secteursActivité` (
   `idSect` int NOT NULL,
-  `actitive` varchar(50) DEFAULT NULL,
+  `activite` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`idSect`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
@@ -178,7 +178,7 @@ CREATE TABLE IF NOT EXISTS `users` (
 -- Contraintes pour la table `clients`
 --
 ALTER TABLE `clients`
-  ADD CONSTRAINT `clients_ibfk_1` FOREIGN KEY (`idSect`) REFERENCES `secteurs_activité` (`idSect`);
+  ADD CONSTRAINT `clients_ibfk_1` FOREIGN KEY (`idSect`) REFERENCES `secteursActivite` (`idSect`);
 
 --
 -- Contraintes pour la table `commander`
