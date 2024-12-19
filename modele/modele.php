@@ -29,7 +29,17 @@
             return password_verify($password,$hash);
         } else return false;
     }
-    
+    function  update_projet($codeProjet, $abrege, $nomProjet, $typeProjet) {
+        $connexion = connect_db();
+        $sql = "UPDATE projets SET nomProjet = :nomProjet ,abrege = :abrege , typeProjet= :typeProjet WHERE codeProjet = :codeProjet";
+        $reponse = $connexion->prepare($sql);
+        $reponse->bindValue(":codeProjet", $codeProjet, PDO::PARAM_INT);
+        $reponse->bindValue(":abrege", $abrege, PDO::PARAM_STR);
+        $reponse->bindValue(":nomProjet", $nomProjet, PDO::PARAM_STR);
+        $reponse->bindValue(":typeProjet", $typeProjet, PDO::PARAM_STR);
+        $reponse->execute();
+
+}
         
     
 

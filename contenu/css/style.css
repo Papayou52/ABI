@@ -1,139 +1,64 @@
 
+
 /* Appliquer une police par défaut */
-h2{
-    align-content: center
-    ;
+/* Style pour l'arrière-plan de la page */
+/* Style pour l'arrière-plan de la page */
+body {
+    background-color: #d6eaf8; /* Bleu clair */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
 }
+
+/* Style pour le titre */
+h2 {
+    text-align: center;
+    color: #34495e; /* Bleu-gris foncé */
+}
+
+/* Conteneur pour la table */
 .table-container {
     width: 100%;
     overflow-x: auto;
+    margin: 20px auto;
+    padding: 10px;
+    background-color: #aed6f1; /* Bleu clair */
+    border: 2px solid #2980b9; /* Bordure bleu foncé */
+    border-radius: 10px;
 }
 
+/* Style pour la table */
 table {
     width: 100%;
-    border-collapse: collapse;
+    border-collapse: separate; /* Sépare les cellules pour les bordures */
+    border-spacing: 0; /* Supprime les espaces entre les cellules */
+    background-color: #f4f6f7; /* Blanc cassé */
 }
 
+/* Style des cellules et des lignes */
 th, td {
-    border: 1px solid #ddd;
-    padding: 8px;
+    border: 1px solid #2980b9; /* Bordure bleu foncé */
+    padding: 12px;
     text-align: left;
+    background-color: #ebf5fb; /* Bleu clair doux */
 }
 
+/* Bordures des cellules */
 th {
-    background-color: #f4f4f4;
+    background-color: #2980b9; /* Bleu foncé */
+    color: white;
+    font-weight: bold;
 }
 
+/* Lien d'action dans la table */
 .actions a {
     text-decoration: none;
     margin-right: 8px;
+    font-size: 14px;
+    color: #2980b9; /* Bleu foncé */
 }
 
 .actions .btn-supprimer {
     color: red;
     font-weight: bold;
 }
-
-.actions .btn-supprimer:hover {
-    text-decoration: underline;
-    color: darkred;
-}
-
-.add-container {
-    text-align: center;
-    margin-top: 10px;
-}
-
-.btn-add {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #28a745;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    font-size: 16px;
-}
-
-.btn-add:hover {
-    background-color: #218838;
-}
-
-h1 {
-    text-align: center;
-}
-
-#menu {
-    list-style: none;
-    text-align: center;
-}
-
-#menu li {
-    display: inline;
-    padding: 20px;
-    background-color: steelblue;
-}
-
-#menu li:hover {
-    background-color: rgb(120, 163, 163);
-}
-
-#menu li a {
-    color: white;
-    text-decoration: none;
-}
-
-#monform {
-    width: 300px;
-    margin: auto;
-}
-
-label {
-    width: 100px;
-}
-
-#monid {
-    width: 100px;
-    margin: auto;
-    color: tomato;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 60px;
-}
-
-.montableau {
-    border: 1px solid black;
-    width: 600px;
-    margin: auto;
-}
-
-th {
-    background-color: rgba(245, 175, 26, 0.993);
-    border-right: 1px solid rgb(29, 28, 28);
-    color: white;
-    text-align: center;
-}
-
-td {
-    border-top: 1px solid black;
-    border-right: 1px solid black;
-}
-
-.colid {
-    text-align: center;
-}
-
-.colsuppr {
-    text-align: center;
-}
-.ajout {
-    
-    text-align: center;
-    margin: auto;
-    
-}
-
-.formulaire{
-    
-    width: 600px;
-    margin: auto;
-}
-
