@@ -46,7 +46,11 @@ include 'modele/modele.php';
         } else 
         return $tErreurs;
     }
-
+    function modifier_projet($codeProjet, $abrege, $nomProjet, $typeProjet){
+        update_projet($codeProjet, $abrege, $nomProjet, $typeProjet);
+        $projets = get_all_projets();
+        require "vue/modifierProjet.php";
+    }
     
 
     function control_form_fields($abrege, $nomProjet, $typeProjet) {
