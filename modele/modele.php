@@ -16,6 +16,25 @@
         return $connexion;
     }
 
+    // Fonction connexion au site (cherche si l'utilisateur existe)
+    function connexionSite($login,$password){
+        $connexion = connect_db();
+        $sql = "SELECT passUser  FROM `users` WHERE loginUser = :login";
+        $reponse =$connexion->prepare($sql);
+        $reponse->bindParam(':login',$login,PDO::PARAM_STR);
+        $reponse->execute();
+        $resultat = $reponse->fetch(PDO::FETCH_ASSOC);
+        if ($resultat !== null && $resultat != '')  {
+            $hash = password_hash($resultat['passUser'],PASSWORD_DEFAULT);
+            return password_verify($password,$hash);
+        } else return false;
+    }
+    
+        
+    
+
+    
+
     // Création de la liste des Stagiaires
     function get_all_projets(){
 

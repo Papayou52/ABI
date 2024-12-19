@@ -27,6 +27,28 @@ include 'modele/modele.php';
     
     }
     
+    //Fonction de controle de  connexion au Site
+    function controleConnexion($login,$password){
+
+        $connexion = connexionSite($login,$password);
+        $tErreurs = []; // initialise le tableau d'erreurs
+        if (empty($login)){
+            $tErreurs['login'] = "Champ vide";
+        }
+        if (empty($password)){
+            $tErreurs['password'] = "Champ vide";
+        }
+        if(empty($tErreurs)) {
+            if($connexion === false){
+                $tErreurs['erreur'] = 'Utilisateur inconnu ou mot de passe incorrect';
+                return $tErreurs;
+            }
+        } else 
+        return $tErreurs;
+    }
+
+    
+
     function control_form_fields($abrege, $nomProjet, $typeProjet) {
         $tErreurs = []; // initialise le tableau d'erreurs
         if (empty($abrege)) {// je teste le champ prenom
@@ -65,6 +87,6 @@ include 'modele/modele.php';
 
 
 
-?>
+
 
 

@@ -1,7 +1,7 @@
 <?php
 // Commentez et decommentez les define en fonction de la config  cmd(ctrl) k+c
 
-// --- KARIMA ET VALENTIN
+//  --- KARIMA ET VALENTIN
 define("BASE","ABI");
 define("SERVER","localhost:3306");
 define("USER","root");
