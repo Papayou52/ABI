@@ -29,6 +29,15 @@
             return password_verify($password,$hash);
         } else return false;
     }
+
+    
+    //Fonction get_all_role (cherche la liste des rôles pour faire la liste de choix)
+    function get_all_role(){
+        $connexion = connect_db();
+        $role = [];
+        $sql = "SELECT typeRole FROM `roles` WHERE idRole != 1";
+        
+
     function  update_projet($codeProjet, $abrege, $nomProjet, $typeProjet) {
         $connexion = connect_db();
         $sql = "UPDATE projets SET nomProjet = :nomProjet ,abrege = :abrege , typeProjet= :typeProjet WHERE codeProjet = :codeProjet";
@@ -40,12 +49,18 @@
         $reponse->execute();
 
 }
+
         
+        foreach($connexion->query($sql)as $row) {
+            $role[] = $row;
+        }
+        return $role;
+    }
     
 
     
 
-    // Création de la liste des Stagiaires
+    // Création de la liste des projets
     function get_all_projets(){
 
         $connexion = connect_db();
@@ -56,6 +71,18 @@
             $projets[] = $row;
         }
         return $projets;
+    }
+
+    //Création liste utilisateurs
+    function get_all_user(){
+        $connexion = connect_db();
+        $users = [];
+        $sql = "SELECT users.idUser, users.loginUser, users.passUser, roles.typeRole FROM users inner JOIN roles on users.idRole = roles.idRole";
+
+        foreach ($connexion->query($sql)as $row) {
+            $users[] = $row;
+        }
+        return $users;
     }
 
     function get_projet_by_id($codeProjet)
@@ -89,6 +116,21 @@
     }
     
 
+    function ajouter_user($user,$password,$role){
+        $connexion = connect_db();
+        $sql = "INSERT INTO `users`(`loginUser`, `passUser`, `idRole`) VALUES ('$user','$password','$role')";
+        $reponse = $connexion->prepare($sql);
+        $reponse->execute();
+    }
+
+    function typeRole_to_idRole($typeRole){
+        $connexion = connect_db();
+        $sql ="SELECT `idRole` FROM `roles` WHERE `typeRole` = :role;";
+        $reponse = $connexion->prepare($sql);
+        $reponse->bindParam(':role',$typeRole);
+        $reponse->execute();
+        return $reponse->fetch();
+    }
 
 
       // Création de la liste des clients
