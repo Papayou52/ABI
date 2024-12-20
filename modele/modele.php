@@ -29,6 +29,7 @@
             return password_verify($password,$hash);
         } else return false;
     }
+
     
     //Fonction get_all_role (cherche la liste des rôles pour faire la liste de choix)
     function get_all_role(){
@@ -36,6 +37,19 @@
         $role = [];
         $sql = "SELECT typeRole FROM `roles` WHERE idRole != 1";
         
+
+    function  update_projet($codeProjet, $abrege, $nomProjet, $typeProjet) {
+        $connexion = connect_db();
+        $sql = "UPDATE projets SET nomProjet = :nomProjet ,abrege = :abrege , typeProjet= :typeProjet WHERE codeProjet = :codeProjet";
+        $reponse = $connexion->prepare($sql);
+        $reponse->bindValue(":codeProjet", $codeProjet, PDO::PARAM_INT);
+        $reponse->bindValue(":abrege", $abrege, PDO::PARAM_STR);
+        $reponse->bindValue(":nomProjet", $nomProjet, PDO::PARAM_STR);
+        $reponse->bindValue(":typeProjet", $typeProjet, PDO::PARAM_STR);
+        $reponse->execute();
+
+}
+
         
         foreach($connexion->query($sql)as $row) {
             $role[] = $row;

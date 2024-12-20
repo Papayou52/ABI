@@ -59,6 +59,7 @@ include 'modele/modele.php';
         return $tErreurs;
     }
 
+
     function controleUser($user,$password1,$password2,$role){
         $tErreurs = []; // initialise le tableau d'erreurs
         if (empty($user)){
@@ -79,6 +80,13 @@ include 'modele/modele.php';
         return $tErreurs;
     }
      
+
+    function modifier_projet($codeProjet, $abrege, $nomProjet, $typeProjet){
+        update_projet($codeProjet, $abrege, $nomProjet, $typeProjet);
+        $projets = get_all_projets();
+        require "vue/modifierProjet.php";
+    }
+
     
 
     function control_form_fields($abrege, $nomProjet, $typeProjet) {
