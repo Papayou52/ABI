@@ -2,7 +2,7 @@
 $title = "Connexion";
 ob_start();
 ?>
-<form action="../index.php?action=login" method="POST" class="mt-3" >
+<form action="index.php?action=login" method="POST" class="mt-3" >
     <br>
     <!-- Login input -->
     <div data-mdb-input-init class="form-outline mt-3">
